@@ -63,14 +63,22 @@ function addFootball() {
       //console.log("Du fångade!!");
       points++;
       score.innerHTML = "Score: " + points;
+      var sound = document.getElementById("key6");
+      sound.play(); 
+      console.log(play())
       clearInterval(move);
+
       football.remove();
       if (points < 5) {
         addFootball();
       } else {
+
         fasterFootball();
       }
 
+
+        
+    
       //   addFootball();
     } else if (footballTop == 450) {
       //console.log("GAME OVER!!!");
