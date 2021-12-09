@@ -3,7 +3,8 @@ let bollkalle = document.getElementById("bollkalle");
 let gameOver = document.getElementById("gameOver");
 let result = document.getElementById("result");
 let score = document.getElementById("score");
-
+let sound1 = new Audio('sound/trummor_cowbell.wav'); 
+let sound2 = new Audio('sound/trummor_stick.wav');
 let bottom = 0;
 let left = 220;
 let points = 0;
@@ -63,9 +64,9 @@ function addFootball() {
       //console.log("Du fångade!!");
       points++;
       score.innerHTML = "Score: " + points;
-      var sound = document.getElementById("key6");
-      sound.play(); 
-      console.log(play())
+      
+      sound1.play()
+    
       clearInterval(move);
 
       football.remove();
@@ -84,7 +85,7 @@ function addFootball() {
       //console.log("GAME OVER!!!");
       gameOver.innerHTML = "GAME OVER!!!";
       clearInterval(move);
-
+      sound2.play()
       // Skapar en restart knapp
       let restart = document.createElement("button");
       restart.id = "restart";
@@ -134,6 +135,7 @@ function fasterFootball() {
       //console.log("Du fångade!!");
       points++;
       score.innerHTML = "Score: " + points;
+      sound1.play()
       clearInterval(move);
       football.remove();
       addFootball();
@@ -141,7 +143,7 @@ function fasterFootball() {
       //console.log("GAME OVER!!!");
       gameOver.innerHTML = "GAME OVER!!!";
       clearInterval(move);
-
+      sound2.play()
       // Skapar en restart knapp
       let restart = document.createElement("button");
       restart.id = "restart";
